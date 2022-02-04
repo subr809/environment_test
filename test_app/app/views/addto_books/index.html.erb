@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Addto Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Author</th>
+      <th>Price</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @addto_books.each do |addto_book| %>
+      <tr>
+        <td><%= addto_book.author %></td>
+        <td><%= addto_book.price %></td>
+        <td><%= addto_book.date %></td>
+        <td><%= link_to 'Show', addto_book %></td>
+        <td><%= link_to 'Edit', edit_addto_book_path(addto_book) %></td>
+        <td><%= link_to 'Destroy', addto_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Addto Book', new_addto_book_path %>

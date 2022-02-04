@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @addto_book.author %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @addto_book.price %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @addto_book.date %>
+</p>
+
+<%= link_to 'Edit', edit_addto_book_path(@addto_book) %> |
+<%= link_to 'Back', addto_books_path %>
