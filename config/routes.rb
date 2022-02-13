@@ -1,8 +1,9 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :users_books
+  resources :users
   root 'books#index'
-
   resources :books do
     member do
       get :delete

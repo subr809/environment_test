@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Users Books</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Book</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users_books.each do |users_book| %>
+      <tr>
+        <td><%= User.where(id: users_book.user_id).last.username %></td>
+        <td><%= Book.where(id: users_book.book_id).last.title %></td>
+        <td><%= link_to 'Show', users_book %></td>
+        <td><%= link_to 'Edit', edit_users_book_path(users_book) %></td>
+        <td><%= link_to 'Destroy', users_book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Users Book', new_users_book_path %>
+<br>
+<%= link_to 'Book index', books_path %>
+<br>
+<%= link_to 'User index', users_path %>
